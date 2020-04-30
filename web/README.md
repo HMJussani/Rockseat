@@ -1,3 +1,3 @@
-### `yarn build` fails to minify
+### RockSeat RadarDev WEB
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Desenvolvimento OmniStack by Diego Fernandes
