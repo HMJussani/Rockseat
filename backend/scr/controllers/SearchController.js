@@ -3,8 +3,8 @@ const ParseStringToArray = require('../utils/ParseStringToArray');
 
 module.exports = {  
     async index(request, response) {
-        const { latitude, longitude, techs } = request.query; //recebe a rquisição da busca       
-        const techArray = ParseStringToArray(techs); //converte em array   
+        const { latitude, longitude, techs } = request.query;       
+        const techArray = ParseStringToArray(techs); 
         const dev = await Dev.find({
             techs: {
                 $in: techArray, 

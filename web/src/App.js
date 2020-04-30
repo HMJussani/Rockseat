@@ -27,21 +27,22 @@ function App() {
 
   useEffect(() => {
     async function loadDev() {
-      const response = await api.get('/devs');
+      const response = await api.get('/devs');      
       setDev(response.data);
+
     }
     loadDev();
   }, []);
 
   async function handleAddDev(e) {
     e.preventDefault();
-    const response = api.post('/devs', {
+    const response = await api.post('/devs', {
       github_name,
       techs,
       longitude,
       latitude
-    });
-    setGitHUb(''); //limpa campos
+    });    
+    setGitHUb(''); 
     setTechs('');
     setDev([...devs, response.data]);
     

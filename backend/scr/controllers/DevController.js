@@ -1,10 +1,9 @@
-const axios = require('axios');    // importa lib axios // yarn add axios
-const Dev = require('../models/dev'); //import o model dev
+const axios = require('axios');    
+const Dev = require('../models/dev');
 const ParseStringTArray = require('../utils/ParseStringToArray');
 
 //store cria no banco de dados
 //index lista todos do banco
-//destroy apaga user
 
 module.exports = {
 
