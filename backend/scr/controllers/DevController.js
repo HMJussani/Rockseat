@@ -13,18 +13,13 @@ module.exports = {
     return response.json(devs);
   },
 
-  async store(request, response) {     //async sem sincronismo
-    // console.log(request.body);
-    const { github_name, techs, longitude, latitude } = request.body;            //cria a variável e pega os dados pelo post
-    //verifica se já tem cadastro
+  async store(request, response) { 
+    const { github_name, techs, longitude, latitude } = request.body; 
     let dev = await Dev.findOne({ github_name });
     if (!dev) {
-      const apiresponse = await axios.get(`https://api.github.com/users/${github_name}`); //await espera o retorno
-      // console.log(apiresponse.data);
-      const { name = login, bio, avatar_url } = apiresponse.data; // pega os dados da resposta
-      // console.log(name,avatar_url,bio, github_name);
+      const apiresponse = await axios.get(`https://api.github.com/users/${github_name}`);
+      const { name = login, bio, avatar_url } = apiresponse.data; 
       const techArray = ParseStringTArray(techs);
-
       const location = {
         type: 'Point',
         coordinates: [longitude, latitude]
@@ -38,7 +33,7 @@ module.exports = {
         location
       });
     }
-    return response.json(dev); // retorno do obj jason
+    return response.json(dev); 
   }
 
 };

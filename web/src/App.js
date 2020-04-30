@@ -43,7 +43,7 @@ function App() {
     });
     setGitHUb(''); //limpa campos
     setTechs('');
-    //setDev([...devs, response.data]);
+    setDev([...devs, response.data]);
     
   }
 
